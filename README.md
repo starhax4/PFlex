@@ -1,50 +1,108 @@
-# React + TypeScript + Vite
+# 🚀 PFlex | Portfolio Builder
+## App Link : [PFlex](https://pflex.vercel.app/)
 
- to get React working in Vite with HMR and some ESLint rules.
+## 📝 Project Overview
 
-Currently, two official plugins are available:
+PFlex Portfolio Builder is a cutting-edge web application designed to help professionals and students create stunning, personalized portfolios with ease. Built with modern web technologies, this platform offers an intuitive drag-and-drop interface and robust features for showcasing your work.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
 
-## Expanding the ESLint configuration
+### Frontend
+- React 18
+- TypeScript
+- Tailwind CSS
+- React Router v7
+- Shadcn UI
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Backend
+- Firebase Authentication
+- Firestore
+- Firebase Functions
 
-- Configure the top-level `parserOptions` property like this:
+### Development Tools
+- Vite
+- ESLint
+- Prettier
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🌟 Key Features
+
+- 🎨 Customizable Portfolio Templates
+- 🔒 Secure User Authentication
+- 📝 Drag-and-Drop Portfolio Editor
+- 🌐 Custom Subdomain Generation
+- 📱 Responsive Design
+- ♿ Accessibility Optimized
+- Serves HTML & CSS for better Performance
+
+## 🚦 Prerequisites
+
+- Node.js (v18+)
+- npm (v9+)
+- Firebase Account
+
+## 🔧 Local Setup
+
+1. Clone the repository
+```bash
+git clone https://github.com/starhax4/PFlex.git
+cd pflex
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install Dependencies
+```bash
+npm install
 ```
+
+3. Set Up Environment Variables
+- Create a `.env` file in the root directory
+- Add your Firebase configuration:
+```
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+# Add other Firebase config variables
+```
+
+4. Run Development Server
+```bash
+npm run dev
+```
+
+## 🌐 Deployment
+
+Deployed on Vercel:
+- Automatic deployments from `main` branch
+- Preview deployments for pull requests
+
+## 📦 Available Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Create production build
+- `npm run lint`: Run ESLint
+- `npm run preview`: Preview production build
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+Distributed under the MIT License.
+
+## 📞 Contact
+
+Hamza Islam - starhax4@gmail.com
+- LinkedIn : [Hamza Islam](https://www.linkedin.com/in/hamzaislam01/)
+Project Link: [https://github.com/starhax4/PFlex](https://github.com/yourusername/starhax4/PFlex)
+
+## 🙏 Acknowledgements
+
+- Sr.Engrr Ali Shan Thaeem (MailMunch)
+
+- React
+- Firebase
+- Tailwind CSS
+- Shadcn UI
