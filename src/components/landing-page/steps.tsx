@@ -1,6 +1,4 @@
-const Steps = ()=>{
-    return (
-        <section></section>
-    )
-}
-export default Steps
+const Steps = () => {
+  return <section></section>;
+};
+export default Steps;

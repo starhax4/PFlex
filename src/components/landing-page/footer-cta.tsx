@@ -1,9 +1,5 @@
-
-
 const FooterCta = () => {
-  return (
-    <section></section>
-  )
-}
+  return <section></section>;
+};
 
-export default FooterCta
+export default FooterCta;

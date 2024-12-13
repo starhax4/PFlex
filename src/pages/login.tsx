@@ -1,11 +1,10 @@
-
 const Login = () => {
   return (
     <div>
-        <p>Login</p>
-        <h2>Hamza</h2>
+      <p>Login</p>
+      <h2>Hamza</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

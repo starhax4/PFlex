@@ -1,6 +1,4 @@
-const FeaturesTwo = ()=>{
-    return (
-        <section></section>
-    )
-}
-export default FeaturesTwo
+const FeaturesTwo = () => {
+  return <section></section>;
+};
+export default FeaturesTwo;

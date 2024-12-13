@@ -1,4 +1,5 @@
 # 🚀 PFlex | Portfolio Builder
+
 ## App Link : [PFlex](https://pflex.vercel.app/)
 
 ## 📝 Project Overview
@@ -8,6 +9,7 @@ PFlex Portfolio Builder is a cutting-edge web application designed to help profe
 ## 🛠 Technologies Used
 
 ### Frontend
+
 - React 18
 - TypeScript
 - Tailwind CSS
@@ -15,11 +17,13 @@ PFlex Portfolio Builder is a cutting-edge web application designed to help profe
 - Shadcn UI
 
 ### Backend
+
 - Firebase Authentication
 - Firestore
 - Firebase Functions
 
 ### Development Tools
+
 - Vite
 - ESLint
 - Prettier
@@ -43,19 +47,23 @@ PFlex Portfolio Builder is a cutting-edge web application designed to help profe
 ## 🔧 Local Setup
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/starhax4/PFlex.git
 cd pflex
 ```
 
 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 3. Set Up Environment Variables
+
 - Create a `.env` file in the root directory
 - Add your Firebase configuration:
+
 ```
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_domain
@@ -63,6 +71,7 @@ VITE_FIREBASE_AUTH_DOMAIN=your_domain
 ```
 
 4. Run Development Server
+
 ```bash
 npm run dev
 ```
@@ -70,6 +79,7 @@ npm run dev
 ## 🌐 Deployment
 
 Deployed on Vercel:
+
 - Automatic deployments from `main` branch
 - Preview deployments for pull requests
 
@@ -95,8 +105,9 @@ Distributed under the MIT License.
 ## 📞 Contact
 
 Hamza Islam - starhax4@gmail.com
+
 - LinkedIn : [Hamza Islam](https://www.linkedin.com/in/hamzaislam01/)
-Project Link: [https://github.com/starhax4/PFlex](https://github.com/yourusername/starhax4/PFlex)
+  Project Link: [https://github.com/starhax4/PFlex](https://github.com/yourusername/starhax4/PFlex)
 
 ## 🙏 Acknowledgements
 
