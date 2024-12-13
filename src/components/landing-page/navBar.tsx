@@ -3,20 +3,32 @@ import { Button } from "../ui/button";
 
 const NavBar = () => {
   return (
-    <nav className="flex w-[80vw] p-6 container justify-between mx-auto items-center  text-white">
+    <nav className="container mx-auto flex w-[80vw] items-center justify-between p-6 text-white">
       <a href="/">
         <img src="/images/PFlex.svg" alt="pflex-logo" />
       </a>
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
-          <Link className="hover:text-primary" to="/">Home</Link>
-          <Link className="hover:text-primary" to="/#featuresOne">Features</Link>
-          <Link className="hover:text-primary" to="/#templates">templates</Link>
-          <Link className="hover:text-primary" to="/#pricing">Pricing</Link>
+          <Link className="hover:text-primary" to="/">
+            Home
+          </Link>
+          <Link className="hover:text-primary" to="/#featuresOne">
+            Features
+          </Link>
+          <Link className="hover:text-primary" to="/#templates">
+            templates
+          </Link>
+          <Link className="hover:text-primary" to="/#pricing">
+            Pricing
+          </Link>
         </ul>
       </div>
       <div className="flex gap-4">
-        <Button asChild variant={"outline"} className="text-white bg-transparent border-slate-200 font-medium">
+        <Button
+          asChild
+          variant={"outline"}
+          className="border-slate-200 bg-transparent font-medium text-white"
+        >
           <Link to="/login">Login</Link>
         </Button>
         <Button asChild>

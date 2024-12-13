@@ -6,6 +6,6 @@ import { BrowserRouterProvider } from "./routes.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouterProvider/>
-  </StrictMode>
+    <BrowserRouterProvider />
+  </StrictMode>,
 );
