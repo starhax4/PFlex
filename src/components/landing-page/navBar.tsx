@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="flex w-[80vw] p-6 container justify-between mx-auto items-center  text-white">
       <a href="/">
-        <img src="/src/assets/PFlex.svg" alt="pflex-logo" />
+        <img src="/images/PFlex.svg" alt="pflex-logo" />
       </a>
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
