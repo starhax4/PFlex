@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

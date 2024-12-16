@@ -9,7 +9,7 @@ const NavBar = () => {
       </a>
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
-          <Link className="hover:text-primary" to="/">
+          <Link className="hover:text-primary" to="#hero">
             Home
           </Link>
           <Link className="hover:text-primary" to="/#featuresOne">
@@ -27,7 +27,7 @@ const NavBar = () => {
         <Button
           asChild
           variant={"outline"}
-          className="border-slate-200 bg-transparent font-medium text-white"
+          className="text-white bg-transparent border-slate-200 font-medium"
         >
           <Link to="/login">Login</Link>
         </Button>
