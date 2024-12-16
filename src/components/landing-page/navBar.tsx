@@ -9,14 +9,26 @@ const NavBar = () => {
       </a>
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
-          <Link className="hover:text-primary" to="/">Home</Link>
-          <Link className="hover:text-primary" to="/#featuresOne">Features</Link>
-          <Link className="hover:text-primary" to="/#templates">templates</Link>
-          <Link className="hover:text-primary" to="/#pricing">Pricing</Link>
+          <Link className="hover:text-primary" to="#hero">
+            Home
+          </Link>
+          <Link className="hover:text-primary" to="/#featuresOne">
+            Features
+          </Link>
+          <Link className="hover:text-primary" to="/#templates">
+            templates
+          </Link>
+          <Link className="hover:text-primary" to="/#pricing">
+            Pricing
+          </Link>
         </ul>
       </div>
       <div className="flex gap-4">
-        <Button asChild variant={"outline"} className="text-white bg-transparent border-slate-200 font-medium">
+        <Button
+          asChild
+          variant={"outline"}
+          className="text-white bg-transparent border-slate-200 font-medium"
+        >
           <Link to="/login">Login</Link>
         </Button>
         <Button asChild>
