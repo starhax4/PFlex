@@ -10,16 +10,16 @@ const NavBar = () => {
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
           <Link className="hover:text-primary" to="#hero">
-            Home
+            <li>Home</li>
           </Link>
           <Link className="hover:text-primary" to="/#featuresOne">
-            Features
+            <li>Features</li>
           </Link>
           <Link className="hover:text-primary" to="/#templates">
-            templates
+            <li>Templates</li>
           </Link>
           <Link className="hover:text-primary" to="/#pricing">
-            Pricing
+            <li>Pricing</li>
           </Link>
         </ul>
       </div>
