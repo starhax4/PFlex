@@ -1,8 +1,19 @@
-import { X } from 'lucide-react';
+import { useBannerShowed } from "@/hooks/useBannerShowed";
+import { X } from "lucide-react";
 
 export default function Banner() {
+  const { setBannerShowed } = useBannerShowed();
+
+  const handleClose = () => {
+    const banner = document.getElementById("banner");
+    if (banner) banner.style.display = "none";
+    setBannerShowed();
+  };
   return (
-    <div id="banner" className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 ">
+    <div
+      id="banner"
+      className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 "
+    >
       <div
         aria-hidden="true"
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -37,11 +48,12 @@ export default function Banner() {
           >
             <circle r={1} cx={1} cy={1} />
           </svg>
-          🚧 We're building something amazing! Most features are under active development.
+          🚧 We're building something amazing! Most features are under active
+          development.
         </p>
         <a
           href="https://github.com/starhax4/PFlex"
-          target='_blank'
+          target="_blank"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           follow our progress <span aria-hidden="true">&rarr;</span>
@@ -51,10 +63,10 @@ export default function Banner() {
         <button
           type="button"
           className="-m-3 p-3 focus-visible:outline-offset-[-4px] text-black"
-          onClick={()=>{const banner = document.getElementById('banner'); if (banner) banner.style.display = 'none'}}
+          onClick={handleClose}
         >
           <span className="sr-only">Dismiss</span>
-          <X size={24} className='text-primary hover:text-black'/>
+          <X size={24} className="text-primary hover:text-black" />
         </button>
       </div>
     </div>
