@@ -9,18 +9,26 @@ const NavBar = () => {
       </a>
       <div className="flex pl-52">
         <ul className="flex content-between gap-11 text-xl font-semibold">
-          <Link className="hover:text-primary" to="#hero">
-            Home
-          </Link>
-          <Link className="hover:text-primary" to="/#featuresOne">
+          <li>
+            <Link className="hover:text-primary" to="#hero">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:text-primary" to="#featuresOne">
             Features
-          </Link>
-          <Link className="hover:text-primary" to="/#templates">
-            templates
-          </Link>
-          <Link className="hover:text-primary" to="/#pricing">
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:text-primary" to="#templates">
+            Templates
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:text-primary" to="#pricing">
             Pricing
-          </Link>
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="flex gap-4">
