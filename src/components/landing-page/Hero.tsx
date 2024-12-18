@@ -5,7 +5,7 @@ import GradientBg from "./gradient";
 const Hero = () => {
   return (
     <section id="hero">
-      <div className="text-center z-20 p-6 relative top-28">
+      <div className="text-center z-20 p-6 pt-1 relative top-12">
         <span className="text-white text-7xl font-bold font-space-grotesk leading-relaxed">
           Build your Dream{" "}
         </span>
