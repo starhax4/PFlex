@@ -17,16 +17,16 @@ interface CompanyLink {
       alt: "mondaycom",
     },
     {
-      link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66e8a82d52566d454c994fdb_Ted.svg",
-      alt: "Ted",
-    },
-    {
-      link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66e8a82d52566d454c994fba_Dropbox.svg",
-      alt: "Dropbox",
+      link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66e8a82e52566d454c99502c_ideo-logo.svg",
+      alt: "ideo",
     },
     {
       link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/6708139d2e30eb81beb54cc7_orangetheory-logo.svg",
       alt: "orangetheory",
+    },
+    {
+      link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66e8a82d52566d454c994fba_Dropbox.svg",
+      alt: "Dropbox",
     },
     {
       link: "https://cdn.prod.website-files.com/66e88746834b80507cdf7933/66e8a82d52566d454c994fb6_Greenhouse.svg",
