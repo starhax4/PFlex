@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useScrollDirection = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -7,6 +7,7 @@ export const useScrollDirection = () => {
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
+      // const isScrolling = window.scrollY > 10;
       if (currentScrollY > lastScrollY) {
         setShow(false); // scrolling down
       } else {
@@ -15,8 +16,8 @@ export const useScrollDirection = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
   return { show, setShow };
