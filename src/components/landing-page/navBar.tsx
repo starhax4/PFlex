@@ -60,19 +60,30 @@ const NavBar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="absolute left-0 right-0 top-full border-t border-gray-800 bg-[#1E1E2F] py-4 md:hidden">
-          <ul className="flex flex-col items-center gap-4 px-4 text-lg font-semibold text-white">
-            <Link className="hover:text-primary" to="#hero">
-              Home
-            </Link>
-            <Link className="hover:text-primary" to="/#featuresOne">
-              Features
-            </Link>
-            <Link className="hover:text-primary" to="/#templates">
-              templates
-            </Link>
-            <Link className="hover:text-primary" to="/#pricing">
-              Pricing
-            </Link>
+          <ul
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex flex-col items-center gap-4 px-4 text-lg font-semibold text-white"
+          >
+            <li>
+              <Link className="hover:text-primary" to="#hero ">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="/#featuresOne">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="/#templates">
+                templates
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="/#pricing">
+                Pricing
+              </Link>
+            </li>
           </ul>
           <div className="mt-4 flex flex-col gap-4 px-4">
             <Button
