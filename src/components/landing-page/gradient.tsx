@@ -1,10 +1,10 @@
 const GradientBg = () => {
   return (
-    <div className="flex justify-center relative top-20 z-10">
+    <div className="relative flex w-full justify-center">
       <svg
         viewBox="0 0 1024 1024"
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+        className="absolute left-1/2 top-1/2 -z-10 size-[20rem] -translate-x-1/2 -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:size-[30rem] md:size-[65rem]"
       >
         <circle
           r={512}
