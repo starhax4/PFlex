@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className="flex items-center justify-between py-4 text-white">
         <a href="/">
           <img
-            src="/src/assets/PFlex.svg"
+            src="/images/PFlex.svg"
             alt="pflex-logo"
             className="w-24 md:w-auto"
           />
