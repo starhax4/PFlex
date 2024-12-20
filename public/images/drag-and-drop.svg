@@ -1,0 +1,21 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#1E1E1E"/>
+<g id="landing-page" clip-path="url(#clip0_51_87)">
+<rect width="1440" height="5839" transform="translate(-129 -2503)" fill="#1E1E2F"/>
+<g id="Group 10">
+<g id="Frame 11">
+<rect x="-30" y="-17" width="256" height="172" rx="10" fill="#2A2A3A"/>
+<g id="Frame 10">
+<g id="pixelarticons:drag-and-drop">
+<path id="Vector" d="M5 3H3V5H5V3ZM19 7H21V13H19V9H9V19H13V21H7V7H19ZM7 3H9V5H7V3ZM5 7H3V9H5V7ZM3 11H5V13H3V11ZM5 15H3V17H5V15ZM11 3H13V5H11V3ZM17 3H15V5H17V3ZM15 17V15H21V17H19V19H17V21H15V17ZM19 19V21H21V19H19Z" fill="#4F46E5"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_51_87">
+<rect width="1440" height="5839" fill="white" transform="translate(-129 -2503)"/>
+</clipPath>
+</defs>
+</svg>

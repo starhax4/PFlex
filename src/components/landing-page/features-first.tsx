@@ -18,7 +18,7 @@ const FeaturesOne = () => {
               <br />
               you would love
             </div>
-            <div className="pt-4 font-['Inter'] text-base font-normal text-white sm:text-xl md:pt-10 md:text-2xl">
+            <div className="px-9 pt-4 font-['Inter'] text-base font-normal text-white sm:text-xl md:pt-10 md:text-2xl">
               Create your portfolio site in just minutes.
               <br className="hidden sm:block" />
               Select, tweak and Publish. Its that easy
