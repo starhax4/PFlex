@@ -28,18 +28,26 @@ const NavBar = () => {
         {/* Desktop menu */}
         <div className="hidden pl-0 md:flex lg:pl-52">
           <ul className="flex content-between gap-4 text-lg font-medium lg:gap-11 lg:text-xl">
-            <Link className="hover:text-primary" to="#hero">
-              Home
-            </Link>
-            <Link className="hover:text-primary" to="#features">
-              Features
-            </Link>
-            <Link className="hover:text-primary" to="/#templates">
-              templates
-            </Link>
-            <Link className="hover:text-primary" to="/#pricing">
-              Pricing
-            </Link>
+            <li>
+              <Link className="hover:text-primary" to="#hero ">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="#features">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="/#templates">
+                templates
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-primary" to="/#pricing">
+                Pricing
+              </Link>
+            </li>
           </ul>
         </div>
 
