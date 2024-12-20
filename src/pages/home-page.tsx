@@ -1,6 +1,7 @@
 import Banner from "@/components/landing-page/banner";
 import Companies from "@/components/landing-page/companies";
 import FeaturesOne from "@/components/landing-page/features-first";
+import FeaturesTwo from "@/components/landing-page/features-second";
 import Hero from "@/components/landing-page/Hero";
 import NavBar from "@/components/landing-page/navBar";
 import { useBannerShowed } from "@/hooks/useBannerShowed";
@@ -33,6 +34,7 @@ const Home = () => {
             <Hero />
             <Companies />
             <FeaturesOne />
+            <FeaturesTwo />
           </div>
         </div>
       </div>
