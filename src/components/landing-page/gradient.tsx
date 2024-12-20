@@ -1,22 +1,30 @@
 const GradientBg = () => {
   return (
-    <div className="relative flex w-full justify-center">
+    <div className="absolute inset-0">
       <svg
         viewBox="0 0 1024 1024"
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 -z-10 size-[20rem] -translate-x-1/2 -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:size-[30rem] md:size-[65rem]"
+        className="absolute left-1/2 top-1/2 h-[20rem] w-[20rem] -translate-x-1/2 -translate-y-1/2 blur-[50px] sm:h-[30rem] sm:w-[30rem] md:h-[40rem] md:w-[40rem] lg:h-[50rem] lg:w-[50rem]"
       >
         <circle
-          r={512}
           cx={512}
           cy={512}
-          fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-          fillOpacity="0.7"
+          r={512}
+          fill="url(#gradient-blur)"
+          fillOpacity="0.5"
+          className="mix-blend-normal"
         />
         <defs>
-          <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+          <radialGradient
+            id="gradient-blur"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(512 512) rotate(90) scale(512)"
+          >
             <stop stopColor="#7775D6" />
-            <stop offset={1} stopColor="#1E1E2F" />
+            <stop offset="0.6" stopColor="#7775D6" stopOpacity="0.6" />
+            <stop offset="1" stopColor="#1E1E2F" stopOpacity="0.1" />
           </radialGradient>
         </defs>
       </svg>

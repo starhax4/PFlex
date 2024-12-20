@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { HashLink as Link } from "react-router-hash-link";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -27,11 +27,11 @@ const NavBar = () => {
 
         {/* Desktop menu */}
         <div className="hidden pl-0 md:flex lg:pl-52">
-          <ul className="flex content-between gap-4 text-lg font-semibold lg:gap-11 lg:text-xl">
+          <ul className="flex content-between gap-4 text-lg font-medium lg:gap-11 lg:text-xl">
             <Link className="hover:text-primary" to="#hero">
               Home
             </Link>
-            <Link className="hover:text-primary" to="/#featuresOne">
+            <Link className="hover:text-primary" to="#features">
               Features
             </Link>
             <Link className="hover:text-primary" to="/#templates">
@@ -70,7 +70,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-primary" to="/#featuresOne">
+              <Link className="hover:text-primary" to="#features">
                 Features
               </Link>
             </li>
