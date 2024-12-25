@@ -63,7 +63,7 @@ const FeatureBar = ({ title, description, icon }: FeatureBarProps) => {
     <div className="mb-4 w-full px-4 sm:px-0">
       <div className="group relative flex w-full cursor-pointer flex-col rounded-lg border border-gray-400 p-4 transition-all duration-300 hover:bg-gray-800 sm:w-96">
         <div className="flex items-start gap-4">
-          <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded-sm border border-gray-400">
+          <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded-sm">
             <img src={icon} alt="icon" className="h-4 w-4" />
           </div>
           <div className="flex flex-col gap-2">
