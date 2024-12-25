@@ -4,6 +4,8 @@ import FeaturesOne from "@/components/landing-page/features-first";
 import FeaturesTwo from "@/components/landing-page/features-second";
 import Hero from "@/components/landing-page/Hero";
 import NavBar from "@/components/landing-page/navBar";
+import Pricing from "@/components/landing-page/pricing";
+import Steps from "@/components/landing-page/steps";
 import { useBannerShowed } from "@/hooks/useBannerShowed";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
@@ -35,6 +37,8 @@ const Home = () => {
             <Companies />
             <FeaturesOne />
             <FeaturesTwo />
+            <Steps/>
+            <Pricing/>
           </div>
         </div>
       </div>

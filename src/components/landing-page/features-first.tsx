@@ -11,14 +11,14 @@ const FeaturesOne = () => {
           <GradientBg />
         </div>
 
-        <div className="relative z-10 flex w-full flex-col-reverse gap-8 px-4 py-12 md:flex-row md:items-center md:justify-evenly md:px-36 md:py-24">
+        <div className="relative z-10 flex w-full flex-col-reverse gap-8 px-4 py-12 md:flex-row md:items-center md:justify-center md:px-36 md:py-24">
           <div className="relative z-10 text-center md:text-left">
             <div className="font-space-grotesk text-3xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Features
               <br />
               you would love
             </div>
-            <div className="px-9 pt-4 font-['Inter'] text-base font-normal text-white sm:text-xl md:pt-10 md:text-2xl">
+            <div className="px-9 pt-4 font-['Inter'] text-base font-normal text-white sm:px-0 sm:text-xl md:pt-10 md:text-2xl">
               Create your portfolio site in just minutes.
               <br className="hidden sm:block" />
               Select, tweak and Publish. Its that easy
