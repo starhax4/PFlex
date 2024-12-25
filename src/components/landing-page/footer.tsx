@@ -21,7 +21,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <nav className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
+            <footer className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
               <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-300">
                 {["Home", "Features", "Templates", "Pricing"].map((item) => (
                   <li key={item}>
@@ -55,7 +55,7 @@ const Footer = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
-            </nav>
+            </footer>
           </div>
 
           <div className="mt-8 border-t border-gray-800 pt-6 text-center">
