@@ -13,6 +13,7 @@ export const tiers = [
       "Standard Support",
       "Basic Analytics",
       "Custom Sub-domain",
+      "Self-hostable Code",
     ],
   },
   {
@@ -40,7 +41,7 @@ export const tiers = [
     price: "39",
     recommended: false,
     cta: "Contact Sales",
-    href: "/contact",
+    href: "/sign-up",
     features: [
       "Unlimited Sites",
       "All Pro Features",

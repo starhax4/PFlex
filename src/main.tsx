@@ -6,6 +6,6 @@ import { AppRouter } from "./routes.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AppRouter/>
-  </StrictMode>
+    <AppRouter />
+  </StrictMode>,
 );

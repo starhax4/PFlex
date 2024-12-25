@@ -12,7 +12,7 @@ export default function Banner() {
   return (
     <div
       id="banner"
-      className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 "
+      className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
     >
       <div
         aria-hidden="true"
@@ -62,7 +62,7 @@ export default function Banner() {
       <div className="flex flex-1 justify-end">
         <button
           type="button"
-          className="-m-3 p-3 focus-visible:outline-offset-[-4px] text-black"
+          className="-m-3 p-3 text-black focus-visible:outline-offset-[-4px]"
           onClick={handleClose}
         >
           <span className="sr-only">Dismiss</span>
