@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="relative z-20 flex items-center justify-center pt-6 md:pt-10">
             <img
               className="w-full max-w-[90vw] rounded-lg md:max-w-[1200px]"
-              src="https://grapesjs.com/assets/images/sc-grapesjs-newsletter-demo.jpg"
+              src="/images/hero-image.jpg"
               alt="editor_image"
               fetchPriority="high"
               loading="eager"
