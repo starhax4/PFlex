@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Button } from "../ui/button";
+import { User, Layout, Radio } from "lucide-react";
 
 const Steps = () => {
   return (
@@ -31,17 +32,17 @@ const Steps = () => {
               <FeatureBar
                 title="Sign Up at PFlex"
                 description="Go sign up using Google , Facebook , or simply a username and password"
-                icon="/icons/users.svg"
+                icon={User}
               />
               <FeatureBar
                 title="Select a template"
                 description="Select a pre-built niche specific template, edit it according to your needs and save it"
-                icon="/icons/template-white.svg"
+                icon={Layout}
               />
               <FeatureBar
                 title="Publish & Go live"
                 description="Publish your customized template in single click, and go live"
-                icon="/icons/live.svg"
+                icon={Radio}
               />
             </div>
           </div>
@@ -55,17 +56,15 @@ export default Steps;
 interface FeatureBarProps {
   title: string;
   description: string;
-  icon: string;
+  icon: React.ElementType;
 }
 
-const FeatureBar = ({ title, description, icon }: FeatureBarProps) => {
+const FeatureBar = ({ title, description, icon: Icon }: FeatureBarProps) => {
   return (
     <div className="mb-4 w-full px-4 sm:px-0">
       <div className="group relative flex w-full cursor-pointer flex-col rounded-lg border border-gray-400 p-4 transition-all duration-300 hover:bg-gray-800 sm:w-96">
         <div className="flex items-start gap-4">
-          <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded-sm">
-            <img src={icon} alt="icon" className="h-4 w-4" />
-          </div>
+          <Icon size={36} className="size-9 text-white" />
           <div className="flex flex-col gap-2">
             <h3 className="font-['Inter'] text-lg font-semibold leading-7 text-white">
               {title}
