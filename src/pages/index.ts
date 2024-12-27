@@ -1,5 +1,5 @@
-import Home from "./home-page";
-import Login from "./login";
+import Home from "./landing-page/home-page";
+
 import NotFoundPage from "./NotFoundPage";
 
-export { Login, NotFoundPage, Home };
+export { NotFoundPage, Home };

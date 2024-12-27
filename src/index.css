@@ -51,7 +51,7 @@
 
 @layer base {
   * {
-    @apply scroll-smooth border-border;
+    @apply scroll-smooth border-border transition-all duration-150;
   }
   body {
     @apply bg-[#1E1E2F] font-sans text-foreground;
