@@ -6,9 +6,9 @@ import Home from "./pages/landing-page/home-page";
 import SignUpForm from "./pages/Auth/signup-form";
 import LoginForm from "./pages/Auth/login-form";
 import { ProtectedRoute } from "./pages/Auth/Protected-routes";
-import Layout from "./pages/dashbord/layout";
-import Page from "./pages/dashbord/page";
 import ResetPassword from "./pages/Auth/reset-password";
+import DashboardLayout from "./pages/dashbord/layout";
+import Main from "./pages/dashbord/main";
 
 export const AppRouter = () => {
   return (
@@ -23,11 +23,18 @@ export const AppRouter = () => {
         <Route
           element={
             <ProtectedRoute>
-              <Layout />
+              <DashboardLayout />
             </ProtectedRoute>
           }
         >
-          <Route path="/dashboard" element={<Page />} />
+          <Route path="dashboard">
+            <Route index element={<Main />} />
+            <Route path="templates" element={<div><h1>Templates</h1></div>} />
+            <Route path="sites" element={<div><h1>sites</h1></div>} />
+            <Route path="settings" element={<div><h1>Settings</h1></div>} />
+            <Route path="notifications" element={<div><h1>Notifications</h1></div>} />
+          </Route>
+          
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { Button } from "../ui/button";
 import GradientBg from "./gradient";
 import AnimationWrapper from "../ui/animation-wrapper";
+import { Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -37,7 +38,9 @@ const Hero = () => {
               asChild
               className="px-6 py-2 text-sm md:px-10 md:py-3 md:text-base"
             >
-              <Link to="/sign-up"> Get Started </Link>
+              <Link to="/sign-up">
+                <Sparkles className="mr-2" /> Start Building Now
+              </Link>
             </Button>
           </div>
 
@@ -48,7 +51,7 @@ const Hero = () => {
           <div className="relative z-20 flex items-center justify-center pt-6 md:pt-10">
             <img
               className="w-full max-w-[90vw] rounded-lg md:max-w-[1200px]"
-              src="/images/hero-image.jpg"
+              src="/images/hero-image.png"
               alt="editor_image"
               fetchPriority="high"
               loading="eager"
