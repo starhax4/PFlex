@@ -74,16 +74,16 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="mx-auto flex justify-center text-white">
+    <div className="mx-auto flex justify-center ">
       <div className="mt-16 flex flex-col">
         <Link to="/">
           <img src="/images/PFlex.svg" alt="logo" className="mb-4 w-20" />
         </Link>
-        <h2 className="font-space-grotesk text-2xl font-bold leading-[72px] text-white md:text-4xl">
+        <h2 className="font-space-grotesk text-2xl font-bold leading-[72px]  md:text-4xl">
           Create an Account
         </h2>
         <div className="mt-1 flex gap-1">
-          <span className="font-['Inter'] text-xs font-medium text-[#b0b3c6]">
+          <span className="font-['Inter'] text-xs font-medium">
             already have an account?{" "}
           </span>
           <span className="font-['Inter'] text-xs font-medium text-primary-foreground underline">
@@ -129,7 +129,7 @@ const SignUpForm = () => {
         </div>
         <div className="mt-9 flex items-center justify-center gap-1">
           <div className="h-[0px] w-[109px] border border-slate-500"></div>
-          <p className="text-center font-['Inter'] text-xs font-normal leading-none text-[#b0b3c6]">
+          <p className="text-center font-['Inter'] text-xs font-normal leading-none">
             or continue with
           </p>
           <div className="h-[0px] w-[109px] border border-slate-500"></div>

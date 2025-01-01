@@ -4,11 +4,14 @@ import "./index.css";
 
 import { AppRouter } from "./routes.tsx";
 import { AuthProvider } from "./context/authContext.tsx";
+import { ThemeProvider } from "./context/themeContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <AuthProvider>
-      <AppRouter />
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
     </AuthProvider>
   </StrictMode>,
 );

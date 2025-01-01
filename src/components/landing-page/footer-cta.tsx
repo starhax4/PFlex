@@ -43,7 +43,7 @@ export default function CTA() {
             <div className="relative mt-16 h-80 lg:mt-8">
               <img
                 className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                src="/images/hero-image.jpg"
+                src="/images/hero-image.png"
                 alt="Editor preview"
                 width={1824}
                 height={1080}
