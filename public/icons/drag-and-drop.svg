@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="24" height="24" fill="#1E1E1E"/>
 <g id="landing-page" clip-path="url(#clip0_51_87)">
-<rect width="1440" height="5839" transform="translate(-129 -2503)" fill="#1E1E2F"/>
+<rect width="1440" height="5839" />
 <g id="Group 10">
 <g id="Frame 11">
 <rect x="-30" y="-17" width="256" height="172" rx="10" fill="#2A2A3A"/>

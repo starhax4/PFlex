@@ -7,15 +7,12 @@ export default function DashboardLayout() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
-        <TopBar />
-        <main className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div> */}
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+      <SidebarInset className="flex h-screen flex-col">
+        <div className="sticky top-0 z-40 bg-background">
+          <TopBar />
+        </div>
+        <main className="flex-1 overflow-y-auto">
+          <div className="container h-full py-4">
             <Outlet />
           </div>
         </main>
