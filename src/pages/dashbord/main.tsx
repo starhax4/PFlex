@@ -12,7 +12,7 @@ const Main = () => {
         <div className="flex flex-col space-y-4 text-center">
           <div>
             <img
-              src="src/assets/home-empty-state.png"
+              src="/assets/home-empty-state.png"
               alt="empty home"
               width={430}
             />
