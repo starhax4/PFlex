@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { useNavigate } from "react-router";
 import { LoginCredentials } from "@/types/auth";
-import { useAuthRedirect } from '@/hooks/useAuthRedirect';
+import { useAuthRedirect } from "@/hooks/useAuthRedirect";
 
 const LoginForm = () => {
   useAuthRedirect();
@@ -51,16 +51,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="mx-auto flex justify-center ">
+    <div className="mx-auto flex justify-center">
       <div className="mt-16 flex flex-col">
         <Link to="/">
           <img src="/images/PFlex.svg" alt="logo" className="mb-4 w-20" />
         </Link>
-        <h2 className="font-space-grotesk text-2xl font-bold leading-[72px]  md:text-4xl">
+        <h2 className="font-space-grotesk text-2xl font-bold leading-[72px] md:text-4xl">
           Welcome back!
         </h2>
         <div className="mt-1 flex gap-1">
-          <span className="font-['Inter'] text-xs font-medium ">
+          <span className="font-['Inter'] text-xs font-medium text-muted-foreground">
             don't have an account?{" "}
           </span>
           <span className="font-['Inter'] text-xs font-medium text-primary-foreground underline">
@@ -180,7 +180,7 @@ const LoginForm = () => {
 
             <Link
               to="/forgot-password"
-              className="flex justify-end text-xs  hover:text-primary"
+              className="flex justify-end text-xs text-muted-foreground hover:text-primary"
             >
               Forgot Password?
             </Link>

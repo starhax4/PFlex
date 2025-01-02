@@ -6,10 +6,11 @@ import * as React from "react";
 import { Input } from "./ui/input";
 import { Bell, Plus, Search } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function TopBar() {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const User = {
     name: user?.displayName ?? "Anonymous",
@@ -40,21 +41,30 @@ export default function TopBar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild size="sm" className="hidden sm:inline-flex mr-2">
-              <Link to="dashboard/sites/new">
+            <Button
+              asChild
+              size="sm"
+              className="mr-2 hidden hover:cursor-pointer sm:inline-flex"
+              onClick={() => {
+                navigate("/dashboard/sites");
+              }}
+            >
+              <div>
                 <span>Create New Site</span>
                 <Plus className="ml-2 h-4 w-4" />
-              </Link>
+              </div>
             </Button>
 
             <div className="flex items-center gap-2">
-              <Link
-                to="dashboard/notifications"
+              <div
+                onClick={() => {
+                  navigate("dashboard/notifications");
+                }}
                 className="rounded-full p-2 hover:bg-sidebar-accent"
               >
                 <Bell className="h-5 w-5" />
-              </Link>
-              
+              </div>
+
               <NavUser user={User} />
             </div>
           </div>

@@ -39,14 +39,14 @@ const data = {
       isActive: true,
     },
     {
+      title: "My Sites",
+      url: "dashboard/sites",
+      icon: Files,
+    },
+    {
       title: "Templates",
       url: "dashboard/templates",
       icon: PanelsTopLeft,
-    },
-    {
-      title: "Sites",
-      url: "dashboard/sites",
-      icon: Files,
     },
   ],
   projects: [
