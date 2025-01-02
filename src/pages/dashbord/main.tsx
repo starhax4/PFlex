@@ -15,6 +15,8 @@ const Main = () => {
               src="/assets/home-empty-state.png"
               alt="empty home"
               width={430}
+              height={320}
+              loading="eager"
             />
           </div>
           <div>
