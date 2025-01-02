@@ -17,6 +17,7 @@ const Main = () => {
               width={430}
               height={320}
               loading="eager"
+              fetchPriority="high"
             />
           </div>
           <div>

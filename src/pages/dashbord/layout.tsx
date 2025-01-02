@@ -12,7 +12,7 @@ export default function DashboardLayout() {
           <TopBar />
         </div>
         <main className="flex-1 overflow-y-auto">
-          <div className="container h-full py-4">
+          <div className="container h-full py-4 mx-auto">
             <Outlet />
           </div>
         </main>
