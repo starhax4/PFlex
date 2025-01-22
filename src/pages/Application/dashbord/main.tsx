@@ -34,7 +34,7 @@ const Main = () => {
           <div className="mt-4">
             <Button
               onClick={() => {
-                navigate("/dashboard/sites");
+                navigate("/dashboard/sites/new");
               }}
             >
               Get started Now

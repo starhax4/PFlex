@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -23,11 +24,34 @@ export const firebaseAuth = {
 
   logout: () => signOut(auth),
 
-  googleLogin: () => signInWithPopup(auth, googleProvider),
+  googleLogin: () => {
+    signInWithPopup(auth, googleProvider);
+  },
 
   resetPassword: (email: string) => sendPasswordResetEmail(auth, email),
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onAuthStateChanged: (callback: (user: any) => void) =>
     onAuthStateChanged(auth, callback),
+
+  isNewUser: (): Promise<boolean> => {
+    return new Promise((resolve) => {
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          resolve(false);
+          return;
+        }
+        const NEW_USER_THRESHOLD_MS = 5000;
+        const creationTime =
+          user.metadata.creationTime || new Date().toISOString();
+        const lastSignInTime =
+          user.metadata.lastSignInTime || new Date().toISOString();
+        const creationTimeMs = new Date(creationTime).getTime();
+        const lastSignInTimeMs = new Date(lastSignInTime).getTime();
+
+        resolve(
+          Math.abs(creationTimeMs - lastSignInTimeMs) < NEW_USER_THRESHOLD_MS,
+        );
+      });
+    });
+  },
 };

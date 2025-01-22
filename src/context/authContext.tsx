@@ -21,6 +21,7 @@ interface AuthContextType extends AuthState {
   resetPassword: (email: string) => Promise<void>;
   isAuthenticated: () => boolean;
   clearError: () => void;
+  isNewUser: ()=>Promise<boolean | undefined>
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -94,6 +95,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     resetPassword: async (email: string) => {
       try {
         await firebaseAuth.resetPassword(email);
+      } catch (error) {
+        setState((prev) => ({ ...prev, error: (error as Error).message }));
+      }
+    },
+    isNewUser: async () => {
+      try {
+        const result = firebaseAuth.isNewUser();
+        return result;
       } catch (error) {
         setState((prev) => ({ ...prev, error: (error as Error).message }));
       }

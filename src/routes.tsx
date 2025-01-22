@@ -7,8 +7,13 @@ import SignUpForm from "./pages/Auth/signup-form";
 import LoginForm from "./pages/Auth/login-form";
 import { ProtectedRoute } from "./pages/Auth/Protected-routes";
 import ResetPassword from "./pages/Auth/reset-password";
-import DashboardLayout from "./pages/dashbord/layout";
-import Main from "./pages/dashbord/main";
+import DashboardLayout from "./pages/Application/dashbord/layout";
+import Main from "./pages/Application/dashbord/main";
+import Site from "./pages/Application/sites/page";
+// import SiteForm from "./pages/Application/sites/newSiteForms/Form";
+import PersonForm from "./pages/Application/sites/newSiteForms/personForm";
+import MetaForm from "./pages/Application/sites/newSiteForms/metaForm";
+import NewSite from "./pages/Application/sites/new";
 
 export const AppRouter = () => {
   return (
@@ -30,7 +35,13 @@ export const AppRouter = () => {
           <Route path="dashboard">
             <Route index element={<Main />} />
             <Route path="templates" element={<div><h1>Templates</h1></div>} />
-            <Route path="sites" element={<div><h1>sites</h1></div>} />
+            <Route path="sites">
+              <Route index element={<Site/>}/>
+              <Route path="new" element={<NewSite />} />
+              <Route path="new/:step" element={<NewSite />} />
+              <Route path="new2" element={<PersonForm />} />
+              <Route path="new3" element={<MetaForm />} />
+            </Route>
             <Route path="settings" element={<div><h1>Settings</h1></div>} />
             <Route path="notifications" element={<div><h1>Notifications</h1></div>} />
           </Route>

@@ -46,7 +46,7 @@ export default function TopBar() {
               size="sm"
               className="mr-2 hidden hover:cursor-pointer sm:inline-flex"
               onClick={() => {
-                navigate("/dashboard/sites");
+                navigate("/dashboard/sites/new");
               }}
             >
               <div>
