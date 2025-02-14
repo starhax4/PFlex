@@ -8,6 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
+  User,
 } from "firebase/auth";
 
 import { app } from "@/lib/firebase/index";
@@ -51,6 +52,18 @@ export const firebaseAuth = {
         resolve(
           Math.abs(creationTimeMs - lastSignInTimeMs) < NEW_USER_THRESHOLD_MS,
         );
+      });
+    });
+  },
+
+  getUser: (): Promise<User | null> =>  {
+    return new Promise((resolve) => {
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          resolve(null);
+          return;
+        }
+        resolve(user);
       });
     });
   },

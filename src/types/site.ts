@@ -8,7 +8,7 @@ export interface PersonInfo {
   name: string;
   profession: string;
   bio: string;
-  imageURL: string;
+
 }
 
 interface ThemeColors {

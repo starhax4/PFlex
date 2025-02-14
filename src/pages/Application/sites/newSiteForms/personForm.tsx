@@ -2,14 +2,7 @@ import { SubmitHandler, useForm, Controller } from "react-hook-form";
 import { PersonInfo } from "@/types/site";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  // CardDescription,
-  // CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useNavigate } from "react-router";
@@ -21,6 +14,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
+import { uploadImage } from "@/lib/storage";
+import { Loader2 } from "lucide-react";
+import { addPersonData } from "@/lib/db/sites";
 
 export default function PersonForm() {
   const {
@@ -29,39 +25,60 @@ export default function PersonForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<PersonInfo>();
-  const onSubmit: SubmitHandler<PersonInfo> = (data: PersonInfo): void => {
-    console.log(data);
-    console.log(image);
-    navigate("/dashboard/sites/new/3");
-  };
-  console.log(errors);
-  const navigate = useNavigate();
 
   const [image, setImage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const onImageChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    if (event.target.files && event.target.files[0]) {
-      setImage(URL.createObjectURL(event.target.files[0]));
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<PersonInfo> = async (
+    data: PersonInfo,
+  ): Promise<void> => {
+    navigate("/dashboard/sites/new/3");
+
+    try {
+      const personData = {
+        name: data.name,
+        profession: data.profession,
+        bio: data.bio,
+        imageUrl: image ?? "",
+      };
+      await addPersonData(personData);
+    } catch (error) {
+      console.log(error);
     }
   };
+
+  const onImageChange = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): Promise<void> => {
+    if (event.target.files && event.target.files[0]) {
+      setIsLoading(true);
+      const imageUrl = await uploadImage(event.target.files[0]);
+      setImage(imageUrl ?? null);
+      setIsLoading(false);
+    }
+  };
+
+  console.log(errors);
 
   return (
     <div className="flex justify-center">
       <Card className="flex w-[500px] justify-around bg-secondary md:w-[1000px]">
-        <div className="hidden items-center justify-center md:flex">
+        <div className="hidden flex-col items-center justify-center md:flex">
           <img
             src="/assets/design-ill-2.svg"
             alt="design_svg"
             width={300}
             className="mb-2"
           />
+          <p className="mt-2 w-[300px] text-center">
+            Fill in your details to create your portfolio page
+          </p>
         </div>
         <div>
           <CardHeader>
             <CardTitle>Personal Details</CardTitle>
-            {/* <CardDescription>
-            Build your website with a few simple steps
-          </CardDescription> */}
           </CardHeader>
           <CardContent className="">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -148,19 +165,19 @@ export default function PersonForm() {
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="imageUrl">Picture</Label>
                   <Input
-                    id="imageUrl"
+                    id="imageFile"
                     type="file"
-                    {...register("imageURL", { required: false })}
+                    // {...register("imageFile", { required: false })}
                     onChange={onImageChange}
                   />
                   <span className="ml-1 text-xs text-muted-foreground">
                     An Optional Photo for your Portfolio Site
                   </span>
-                  {errors.imageURL && (
+                  {/* {errors && (
                     <span className="text-sm text-destructive">
-                      Image is required
+                      An Error Occur
                     </span>
-                  )}
+                  )} */}
                   <div className="flex h-24 justify-center rounded-sm bg-card">
                     {image ? (
                       ""
@@ -184,7 +201,17 @@ export default function PersonForm() {
                 <Button onClick={() => window.history.back()} variant="outline">
                   Back
                 </Button>
-                <Button type="submit">Next</Button>
+
+                <Button type="submit" disabled={isLoading} className="">
+                  {isLoading ? (
+                    <div className="flex items-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      loading...
+                    </div>
+                  ) : (
+                    "Next"
+                  )}
+                </Button>
               </div>
             </form>
           </CardContent>

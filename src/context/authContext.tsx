@@ -21,10 +21,12 @@ interface AuthContextType extends AuthState {
   resetPassword: (email: string) => Promise<void>;
   isAuthenticated: () => boolean;
   clearError: () => void;
-  isNewUser: ()=>Promise<boolean | undefined>
+  isNewUser: () => Promise<boolean | undefined>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getUser : ()=> Promise<any | null>
 }
 
-const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, setState] = useState<AuthState>({
@@ -109,6 +111,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     },
     isAuthenticated: () => {
       return !!state.user;
+    },
+    getUser: async () => {
+      try {
+        const result = firebaseAuth.getUser();
+        return result;
+      } catch {
+        return null;
+      }
     },
     clearError, // Add this line
   };

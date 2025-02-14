@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { debounce } from "lodash";
 import { NewSiteInfo } from "@/types/site";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router";
+import { addNewSite, isSubdomainUnique } from "@/lib/db/sites";
+import { useState } from "react";
 
 export default function SiteForm() {
   const {
@@ -18,23 +21,53 @@ export default function SiteForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<NewSiteInfo>();
-  const onSubmit: SubmitHandler<NewSiteInfo> = (data: NewSiteInfo): void => {
-    console.log(data);
-    navigate("/dashboard/sites/new/2");
+
+  const [subdomainError, setSubdomainError] = useState(false);
+
+  const onSubmit: SubmitHandler<NewSiteInfo> = async (
+    data: NewSiteInfo,
+  ): Promise<void> => {
+    const isUnique = await isSubdomainUnique(data.subdomain);
+    if (isUnique === true) {
+      navigate("/dashboard/sites/new/2");
+
+      try {
+        await addNewSite(data);
+      } catch (error) {
+        console.log("error", error);
+      }
+    } else {
+      setSubdomainError(true);
+    }
   };
+
+  const handleSubdomain = debounce(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const isUnique = await isSubdomainUnique(event.target.value);
+      if (isUnique === false) {
+        setSubdomainError(true);
+      } else {
+        setSubdomainError(false);
+      }
+    },
+    500, // Debounce delay in milliseconds
+  );
   console.log(errors);
   const navigate = useNavigate();
 
   return (
     <div className="flex justify-center">
       <Card className="flex w-[500px] justify-around bg-secondary py-6 md:w-[1000px]">
-        <div className="flex items-center justify-center sm:hidden md:flex">
+        <div className="flex flex-col items-center justify-center sm:hidden md:flex">
           <img
             src="/assets/design-ill-1.svg"
             alt="design_svg"
             width={300}
             className="mb-2"
           />
+          <p className="mt-2 w-[300px] text-center">
+            Design your portfolio sites with ease
+          </p>
         </div>
         <div className="flex flex-col">
           <CardHeader>
@@ -79,13 +112,25 @@ export default function SiteForm() {
                       id="Subdomain"
                       placeholder="Your Unique Sub-domain"
                       {...register("subdomain", { required: true })}
+                      onChange={handleSubdomain}
                     />
+
                     <Input
                       className="w-48"
                       placeholder=".pflex.hamzaislam.tech"
                       disabled
                     />
                   </div>
+
+                  {subdomainError ? (
+                    <span className="text-sm text-destructive">
+                      <strong> X </strong> Domain is already taken , try some
+                      unique one
+                    </span>
+                  ) : (
+                    ""
+                  )}
+
                   {errors.subdomain && (
                     <span className="text-sm text-destructive">
                       Required! Domain is already taken , try some unique one

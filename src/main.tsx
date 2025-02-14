@@ -5,12 +5,15 @@ import "./index.css";
 import { AppRouter } from "./routes.tsx";
 import { AuthProvider } from "./context/authContext.tsx";
 import { ThemeProvider } from "./context/themeContext.tsx";
+import { SiteProvider } from "./context/siteContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <AuthProvider>
       <ThemeProvider>
-        <AppRouter />
+        <SiteProvider>
+          <AppRouter />
+        </SiteProvider>
       </ThemeProvider>
     </AuthProvider>
   </StrictMode>,
