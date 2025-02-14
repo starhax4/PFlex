@@ -32,7 +32,7 @@ export default function SiteForm() {
       navigate("/dashboard/sites/new/2");
 
       try {
-        await addNewSite(data);
+        await addNewSite({ ...data, published: false });
       } catch (error) {
         console.log("error", error);
       }
