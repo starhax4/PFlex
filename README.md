@@ -1,6 +1,6 @@
 # 🚀 PFlex | Portfolio Builder
 
-## App Link : [PFlex](https://pflex.vercel.app/)
+## App Link : [PFlex](https://pflex.hamzaislam.tech/)
 
 ## 📝 Project Overview
 

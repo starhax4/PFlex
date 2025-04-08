@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { useAuthRedirect } from "@/hooks/useAuthRedirect";
 
 import { useNavigate } from "react-router";
+import { addNewUserToDB, addUser } from "@/lib/db/users";
 
 interface IFormInput {
   firstName: string;
@@ -26,7 +27,7 @@ const SignUpForm = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { registerUser, googleLogin, clearError, error } = useAuth();
+  const { registerUser, googleLogin, clearError, getUser, error } = useAuth();
   const navigate = useNavigate();
 
   const {
@@ -47,13 +48,29 @@ const SignUpForm = () => {
     try {
       setIsLoading(true);
       clearError();
+      // Register the user first.
       const success = await registerUser(data.email, data.password);
       if (success) {
         toast("User Signed Up Successfully");
+        // Get the registered user
+        const user = await getUser();
+        const id = user?.uid ?? "";
+        const userData = {
+          userId: id,
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          profilePicture: "",
+          role: "user",
+          createdAt: user.metadata.creationTime ?? new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        };
+        // Add user data once registration is successful.
+        await addUser(userData);
+        // Navigate only after user data is added.
         navigate("/dashbord");
       }
     } catch (error) {
-      toast.error("An error occur while Signing-up", {
+      toast.error("An error occurred while signing up", {
         description: String(error),
       });
       console.error(error);
@@ -67,6 +84,7 @@ const SignUpForm = () => {
       // setIsLoading(true);
       await googleLogin();
       toast("User Signed Up Successfully");
+      addNewUserToDB();
     } catch (error) {
       console.error(error);
       toast("Error Signing Up");

@@ -1,14 +1,23 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/context/authContext';
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/context/authContext";
+import { addNewUserToDB } from "@/lib/db/users";
 
 export const useAuthRedirect = () => {
-  const { user } = useAuth();
+  const { user, isNewUser } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
-  }, [user, navigate]);
+    async function fetNewUser() {
+      const isNew = await isNewUser();
+      if (isNew) {
+        navigate("/dashboard/sites/new");
+        addNewUserToDB();
+      }
+    }
+    fetNewUser();
+  }, [user, navigate, isNewUser]);
 };
